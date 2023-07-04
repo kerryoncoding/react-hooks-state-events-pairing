@@ -1,15 +1,15 @@
 import React from "react"
 
-function PageInfo({video, like, unlike}) {
+function PageInfo({video, like, unlike, likes, disLikes, comments}) {
 
 
    return (
       <div className="App">
          <p>{video.views} Views | {video.createdAt}</p>
-         <button onClick={like}>{video.upvotes}👍</button>
-         <button onClick={unlike}>{video.downvotes} 👎</button>
+         <button onClick={like}>{likes}👍</button>
+         <button onClick={unlike}>{disLikes} 👎</button>
          <br />
-         <button>Hide Comments</button>
+         <button onClick={comments}>Hide Comments</button>
       </div>
       
    )

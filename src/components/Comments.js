@@ -1,9 +1,15 @@
 import React from "react"
 
-function Comments() {
+function Comments({video, showComment}) {
+
+   console.log(showComment)
+
+   let commentList = "comments here"
+
+   // video.comments.map( (item) = )
 
    return (
-      <p>Comments here</p>
+      <h2>{(showComment) ? {commentList} : ""  }</h2>
    )
 }
 

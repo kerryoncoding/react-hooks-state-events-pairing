@@ -11,20 +11,21 @@ function App() {
 
   const [likes, setLikes] = useState(videoData.upvotes)
   const [disLikes, setDisLikes] = useState(videoData.downvotes)
+  const [showComments, setShowComments] = useState(true)
 
   console.log(likes)
   function addLikes () {
-    console.log("adding likes")
     setLikes(likes=> likes + 1)
-    videoData.upvotes = likes
-    setVideoData(videoData)
-  }
+   }
 
   function removeLikes () {
-    console.log("Removing likes")
     setDisLikes(disLikes => disLikes + 1)
-    videoData.downvotes = disLikes
-    setVideoData(videoData)
+  }
+
+  function handleComments() {
+    console.log("comments here")
+    setShowComments(!showComments)
+
   }
 
   
@@ -35,8 +36,9 @@ function App() {
     <div className="App">
       
       <VideoInfo video={videoData}/>
-      <PageInfo  video={videoData} like={addLikes} unlike={removeLikes} />
-      <Comments />
+      <PageInfo  video={videoData} like={addLikes} unlike={removeLikes} likes={likes} disLikes={disLikes} comments = {handleComments} />
+      <Comments  showComment={showComments} />
+
     </div>
     
   );

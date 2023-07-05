@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import video from "../data/video.js";
 import VideoInfo from "./VideoInfo"
 import PageInfo from "./PageInfo"
-import Comments from "./Comments"
+import ListComments from "./ListComments.js"
 
 function App() {
   console.log("Here's your data:", video);
@@ -34,11 +34,11 @@ function App() {
   return (
   
     <div className="App">
-      
+
       <VideoInfo video={videoData}/>
       <PageInfo  video={videoData} like={addLikes} unlike={removeLikes} likes={likes} disLikes={disLikes} comments = {handleComments} />
-      <Comments  showComment={showComments} />
-
+      <hr/>
+      <ListComments  video={videoData} showComment={showComments} />
     </div>
     
   );
